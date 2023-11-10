@@ -9,11 +9,11 @@ export const siteConfig = {
         name: "Découvrir",
       },
       {
-        href: "/travel",
+        href: "/travels",
         name: "Voyages",
       },
       {
-        href: "/live",
+        href: "/partner",
         name: "Participer",
       },
       {
