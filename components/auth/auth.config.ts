@@ -1,4 +1,4 @@
-import { PrismaAdapter } from "@next-auth/prisma-adapter";
+import { PrismaAdapter } from "@auth/prisma-adapter";
 import prisma from "../../lib/prisma";
 import GithubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
@@ -10,7 +10,7 @@ import { compare } from "bcrypt";
 
 export const authOptions = {
   secret: env.NEXTAUTH_SECRET,
-  // adapter: PrismaAdapter(prisma),
+  adapter: PrismaAdapter(prisma),
   providers: [
     GithubProvider({
       clientId: env.GITHUB_ID,
@@ -63,9 +63,9 @@ export const authOptions = {
   callbacks: {
     session: ({ session, token, user }) => {
       console.log(session, user);
-      // if (user.id) {
-      //   session.user.id = user.id;
-      // }
+      if (user.id) {
+        session.user.id = user.id;
+      }
       return session;
     },
   },
