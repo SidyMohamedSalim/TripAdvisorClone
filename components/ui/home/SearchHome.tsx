@@ -32,26 +32,7 @@ const SearchHome = () => {
             <SearchType name="Locations de vacances" Icon={KeyIcon} />
           </ul>
           {/* SearchInput */}
-
-          <Card className="w-full my-4 max-w-3xl rounded-full">
-            <CardDescription className="h-fit py-1">
-              <form action="" className="flex items-center ml-4 mr-2">
-                <div className="flex-grow flex items-center ">
-                  <Search aria-describedby="search-input" />
-                  <Input
-                    id="search-input"
-                    className={clsx(
-                      "border-none py-6 focus:outline-none hover:outline-none focus:border-none"
-                    )}
-                    placeholder="Search something....."
-                  />
-                </div>
-                <Button className={"rounded-full text-primary bg-basic"}>
-                  Recherher
-                </Button>
-              </form>
-            </CardDescription>
-          </Card>
+          <SearchForm />
         </div>
       </CenterLayer>
     </section>
@@ -80,5 +61,31 @@ const SearchType = ({
       </Button>
       {selected ? <span className="h-1 w-[83%] bg-black ml-2"></span> : null}
     </div>
+  );
+};
+
+export const SearchForm = () => {
+  return (
+    <Card className="w-full my-4 max-w-3xl rounded-full">
+      <CardDescription className="h-fit py-1">
+        <form action="" className="flex items-center ml-4 mr-2">
+          <div className="flex-grow flex items-center ">
+            <Search aria-describedby="search-input" />
+            <Input
+              id="search-input"
+              className={clsx(
+                "border-none py-6 focus:outline-none hover:outline-none focus:border-none"
+              )}
+              placeholder="Search something....."
+            />
+          </div>
+          <Button
+            className={"rounded-full text-primary bg-basic hover:bg-white "}
+          >
+            Recherher
+          </Button>
+        </form>
+      </CardDescription>
+    </Card>
   );
 };

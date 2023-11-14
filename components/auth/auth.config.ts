@@ -45,12 +45,14 @@ export const authOptions = {
         });
         if (!user) {
           console.log("user not exist");
+          // return null;
           throw new Error("user not exist");
         }
         // if user doesn't exist or password doesn't match
         const PasswordMatch = await compare(password, user.password ?? "");
         if (email !== user.email || !PasswordMatch) {
           console.log("error credentials");
+          // return null;
           throw new Error("error credential");
         }
 

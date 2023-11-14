@@ -18,10 +18,8 @@ import clsx from "clsx";
 import { Separator } from "../ui/separator";
 import { DialogDescription } from "@radix-ui/react-dialog";
 import { signIn } from "next-auth/react";
-import { toast } from "../ui/use-toast";
 import { useRouter } from "next/navigation";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import startOfWeekYearWithOptions from "date-fns/fp/startOfWeekYearWithOptions/index";
 import { useState } from "react";
 import SocialAuthButton from "./SocialAuthButton";
 
@@ -100,7 +98,7 @@ export default function AuthForm() {
           "Access-Control-Allow-Headers": "Content-Type, Authorization",
         },
       }),
-    onSuccess: () => {
+    onSuccess: async () => {
       queryClient.cancelQueries();
       router.push("/");
       router.refresh();
@@ -122,6 +120,13 @@ export default function AuthForm() {
         password: values.password,
         name: values.name,
       });
+      if (registerSuccess) {
+        await signIn("credentials", {
+          redirect: false,
+          email: values.email,
+          password: values.password,
+        });
+      }
     }
   }
 
