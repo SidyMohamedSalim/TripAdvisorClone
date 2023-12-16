@@ -45,3 +45,25 @@ const Tours = () => {
 };
 
 export default Tours;
+
+export const ToursSection = () => {
+  return (
+    <div className="my-20">
+      {/* title */}
+      <div className="flex justify-between items-center">
+        <h4 className="font-medium">Hotels dans les meilleures destinations</h4>
+        <p className={clsx(buttonVariants({ variant: "link" }), "underline")}>
+          Tout Afficher
+        </p>
+      </div>
+
+      {/* content */}
+      <div className="grid grid-cols-4 gap-4 my-4">
+        <TourCardB imageUrl="/photo1.jpg" title="" className="rounded-lg" />
+        <TourCardB imageUrl="/photo2.jpg" title="" className="rounded-lg" />
+        <TourCardB imageUrl="/photo3.jpg" title="" className="rounded-lg" />
+        <TourCardB imageUrl="/photo5.jpg" title="" className="rounded-lg" />
+      </div>
+    </div>
+  );
+};

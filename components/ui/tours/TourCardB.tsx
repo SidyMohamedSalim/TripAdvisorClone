@@ -7,9 +7,10 @@ import clsx from "clsx";
 type TourCardBProps = {
   imageUrl: string;
   title: string;
+  className?: string;
 };
 
-const TourCardB = ({ imageUrl, title }: TourCardBProps) => {
+const TourCardB = ({ imageUrl, title, className }: TourCardBProps) => {
   return (
     <div className="relative">
       <Image
@@ -17,7 +18,7 @@ const TourCardB = ({ imageUrl, title }: TourCardBProps) => {
         alt="image tour"
         width={500}
         height={500}
-        className="w-full h-48"
+        className={clsx("w-full h-48", className)}
       />
       {/* Heart */}
       <Badge className="rounded-full absolute top-2 right-2 bg-white">
@@ -57,5 +58,16 @@ const AvisCercel = ({ colored }: { colored?: boolean }) => {
         "bg-green-600": colored,
       })}
     ></span>
+  );
+};
+
+export const AvisRatio = () => {
+  return (
+    <div className="flex justify-start items-center">
+      <AvisCercel colored={true} />
+      <AvisCercel />
+      <AvisCercel />
+      <AvisCercel />
+    </div>
   );
 };

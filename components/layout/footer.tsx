@@ -9,7 +9,7 @@ const Footer = () => {
         {/* Nav */}
         <div className="flex justify-between text-sm font-extralight">
           <div className="flex justify-start items-start gap-6">
-            <nav className="flex flex-col">
+            <nav className="flex flex-col gap-2">
               <h4 className="text-base">A propos de TripAdvisor</h4>
               <Link href={"/"}>A propos de TripAdvisor</Link>
               <Link href={"/"}>Presse</Link>
@@ -20,7 +20,7 @@ const Footer = () => {
               <Link href={"/"}>Contactez nous</Link>
               <Link href={"/"}>Politiques d&apos;accessibilité</Link>
             </nav>
-            <nav className="flex flex-col">
+            <nav className="flex flex-col gap-2">
               <h4 className="text-base">Explorez</h4>
               <Link href={"/"}>Ecrire un avis</Link>
               <Link href={"/"}>Ajouter un lieu</Link>
@@ -31,7 +31,7 @@ const Footer = () => {
               <Link href={"/"}>Assistance</Link>
               <Link href={"/"}>Articles Voyage</Link>
             </nav>
-            <nav className="flex flex-col">
+            <nav className="flex flex-col gap-2">
               <h4 className="text-base">Utilisez nos solutions</h4>
               <Link href={"/"}>Proprietaires</Link>
               <Link href={"/"}>Avantages Business</Link>
@@ -41,7 +41,7 @@ const Footer = () => {
               <Link href={"/"}>Affilier</Link>
             </nav>
           </div>
-          <nav className="flex flex-col">
+          <nav className="flex flex-col gap-2">
             <h4 className="text-base">Sites TripAdvisor</h4>
             <Link href={"/"}>Reservez les meilleures tables avec TheFork</Link>
             <Link href={"/"}>

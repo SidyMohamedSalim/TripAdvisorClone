@@ -1,5 +1,8 @@
 import CenterLayer from "@/components/layout/Centerlayout";
+import Footer from "@/components/layout/footer";
 import { SearchForm } from "@/components/ui/home/SearchHome";
+import TourCardB from "@/components/ui/tours/TourCardB";
+import { ToursSection } from "@/components/ui/tours/Tours";
 import React from "react";
 
 const page = () => {
@@ -17,10 +20,26 @@ const page = () => {
 
       {/* List des produits */}
       <CenterLayer>
-        <div>
-          <h3>Vous pourriez aimer</h3>
+        <div className="my-8">
+          <div>
+            <h3 className="font-extrabold">Vous pourriez aimer</h3>
+            <p>Plus d&apos;hebergements à Conakry</p>
+          </div>
+
+          <div className="grid grid-cols-4 gap-4 my-4 ">
+            <TourCardB imageUrl="/photo1.jpg" title="" className="rounded-lg" />
+            <TourCardB imageUrl="/photo2.jpg" title="" className="rounded-lg" />
+            <TourCardB imageUrl="/photo3.jpg" title="" className="rounded-lg" />
+            <TourCardB imageUrl="/photo5.jpg" title="" className="rounded-lg" />
+          </div>
         </div>
+
+        <ToursSection />
+        <ToursSection />
+        <ToursSection />
+        <ToursSection />
       </CenterLayer>
+      <Footer />
     </div>
   );
 };

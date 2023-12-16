@@ -16,10 +16,10 @@ export const siteConfig = {
         href: "/partner",
         name: "Participer",
       },
-      {
-        href: "/more",
-        name: "Plus",
-      },
+      // {
+      //   href: "/more",
+      //   name: "Plus",
+      // },
     ],
   },
   links: {
